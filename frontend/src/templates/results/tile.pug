@@ -6,24 +6,38 @@
     br
     | U/NU – nieobecności (nie)usprawiedliwione
     br
+    | SP – spóźnienie
+    br
+    | ZW – zwolnienie
+    br
     | * – przedmiot pozalekcyjny
+    br
+    | Overall – podsumowanie
 ins.adsbygoogle(
   style="display:block; text-align:center;"
   data-ad-layout="in-article"
-  data-ad-client=id
-  data-ad-slot=slot
+  data-ad-client=adId
+  data-ad-slot=adSlot
   data-ad-format="fluid"
 )
-each subject in subjects
-  - const { subjectName, attendance, percentage, isBelowHalf } = subject
-  if attendance[semester].reduce((pv, cv) => pv + cv) > 0
-    .rounded-lg.bg-surface-2.m-3.d-flex.justify-content-between.align-items-center
-      .m-2
-        .font-weight-bold(style="letter-spacing: 0.5px")!= subjectName
-        div
-          | O: #{attendance[semester][0]}
-          span(style="color: gray")!= dot
-          | U: #{attendance[semester][1]}
-          span(style="color: gray")!= dot
-          | NU: #{attendance[semester][2]}
-      .rounded-lg.table-square-space(class=isBelowHalf[semester] ? 'bg-danger' : 'bg-blue') #{percentage[semester]}%
+-
+each subject in subjects[1]
+  - const {Attendance, GPA} = subjects[0][subject]
+  - const attendance = Attendance[semester]
+  - const gpa = GPA && GPA[semester < 2 ? semester : 1]
+  .rounded-lg.bg-surface-2.m-3.p-3
+    .d-flex.justify-content-between
+      .font-weight-bold(style="letter-spacing: 0.5px")!= subject
+      div.d-flex
+        .rounded-lg.table-square-space.mx-2.mb-3(class=gpa && gpa >= 1.75 ? 'bg-blue' : 'bg-danger') #{gpa ? gpa : '-'}
+        .rounded-lg.table-square-space.ml-2.mb-3(class=attendance.Value < 50 ? 'bg-danger' : 'bg-blue') #{attendance.Value}%
+    div
+      | O: #{attendance.Types[0]}
+      span(style="color: gray")!= dot
+      | NU: #{attendance.Types[1]}
+      span(style="color: gray")!= dot
+      | SP: #{attendance.Types[2]}
+      span(style="color: gray")!= dot
+      | U: #{attendance.Types[3]}
+      span(style="color: gray")!= dot
+      | ZW: #{attendance.Types[4]}
