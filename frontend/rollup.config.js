@@ -7,7 +7,7 @@ import pug from 'pug';
 import htmlmin from 'rollup-plugin-html-minifier';
 import html2 from 'rollup-plugin-html2';
 import live from 'rollup-plugin-livereload';
-import polyfills from 'rollup-plugin-node-polyfills';
+import polyfills from 'rollup-plugin-polyfill-node';
 import pugm from 'rollup-plugin-pug';
 import scss from 'rollup-plugin-scss';
 import serve from 'rollup-plugin-serve';
@@ -34,8 +34,8 @@ export default {
     pugm(),
     replace({
       values: {
-        __AD_ID__: config.adsenseId,
-        __AD_SLOT__: config.adsenseSlots[2]
+        __AD_ID__: config.adId,
+        __AD_SLOT__: config.adSlot
       },
       include: '**/*/results.ts'
     }),
@@ -46,8 +46,8 @@ export default {
     html2({
       template: pug.renderFile('./src/index.pug', {
         analyticsId: config.analyticsId,
-        adsenseId: config.adsenseId,
-        adsenseBanners: config.adsenseSlots
+        adId: config.adId,
+        adSlot: config.adSlot
       }),
       fileName: 'index.html',
       externals: { after: [{ tag: 'link', href: `index.${hash}.css` }] }

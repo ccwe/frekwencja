@@ -1,8 +1,8 @@
-import { unescape } from 'querystring';
-import { gunzipSync } from 'zlib';
+import { Buffer } from 'buffer';
+import gz from 'zlib';
 
 export function getStateFromHash(hash: string) {
   return JSON.parse(
-    gunzipSync(Buffer.from(unescape(hash), 'base64url')).toString()
+    gz.gunzipSync(Buffer.from(decodeURI(hash), 'base64')).toString()
   );
 }

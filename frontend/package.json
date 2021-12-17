@@ -19,6 +19,7 @@
     "rollup-plugin-html2": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-polyfill-node": "^0.8.0",
     "rollup-plugin-pug": "^1.1.1",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-serve": "^1.1.0",
