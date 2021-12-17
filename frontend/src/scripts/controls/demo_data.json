@@ -1,100 +1,42 @@
-[
-  {
-    "Name": "Fizyka",
-    "Attendance": [
-      [25, 3, 0, 2, 0],
-      [3, 0, 0, 0, 0]
+{
+  "Attendance": {
+    "Fizyka": [
+      { "Value": 70.45, "Types": [30, 9, 1, 4, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 70.45, "Types": [30, 9, 1, 4, 0] }
+    ],
+    "Geografia": [
+      { "Value": 85.71, "Types": [12, 1, 0, 1, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 85.71, "Types": [12, 1, 0, 1, 0] }
+    ],
+    "Godzina wychowawcza": [
+      { "Value": 90, "Types": [9, 0, 0, 1, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 90, "Types": [9, 0, 0, 1, 0] }
+    ],
+    "Historia": [
+      { "Value": 90, "Types": [27, 1, 0, 2, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 90, "Types": [27, 1, 0, 2, 0] }
+    ],
+    "Informatyka": [
+      { "Value": 40, "Types": [4, 3, 0, 3, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 40, "Types": [4, 3, 0, 3, 0] }
+    ],
+    "Język angielski": [
+      { "Value": 92.31, "Types": [23, 1, 1, 1, 0] },
+      { "Value": 0, "Types": [0, 0, 0, 0, 0] },
+      { "Value": 92.31, "Types": [23, 1, 1, 1, 0] }
     ]
   },
-  {
-    "Name": "Podstawy przedsiębiorczości",
-    "Attendance": [
-      [2, 3, 0, 4, 0],
-      [0, 0, 0, 0, 0]
-    ]
+  "GPAs": {
+    "Fizyka": [1.5, 0],
+    "Geografia": [2.5, 0],
+    "Historia": [2.5, 0],
+    "Informatyka": [2.15, 0],
+    "Język angielski": [5.23, 0]
   },
-  {
-    "Name": "Chemia",
-    "Attendance": [
-      [11, 0, 0, 0, 0],
-      [3, 1, 0, 1, 0]
-    ]
-  },
-  {
-    "Name": "Język niemiecki",
-    "Attendance": [
-      [0, 13, 0, 6, 0],
-      [15, 2, 0, 3, 0]
-    ]
-  },
-  {
-    "Name": "Godzina wychowawcza",
-    "Attendance": [
-      [4, 0, 0, 4, 0],
-      [1, 1, 0, 0, 0]
-    ]
-  },
-  {
-    "Name": "Geografia",
-    "Attendance": [
-      [5, 0, 0, 3, 0],
-      [2, 1, 0, 0, 0]
-    ]
-  },
-  {
-    "Name": "Język hiszpański",
-    "Attendance": [
-      [1, 2, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ]
-  },
-  {
-    "Name": "Język polski",
-    "Attendance": [
-      [20, 8, 0, 0, 0],
-      [10, 1, 0, 2, 0]
-    ]
-  },
-  {
-    "Name": "Historia",
-    "Attendance": [
-      [7, 7, 0, 4, 0],
-      [2, 0, 0, 1, 0]
-    ]
-  },
-  {
-    "Name": "Biologia",
-    "Attendance": [
-      [9, 0, 0, 0, 0],
-      [5, 0, 0, 1, 0]
-    ]
-  },
-  {
-    "Name": "Język angielski",
-    "Attendance": [
-      [15, 2, 0, 3, 0],
-      [4, 1, 0, 0, 0]
-    ]
-  },
-  {
-    "Name": "Informatyka",
-    "Attendance": [
-      [10, 0, 0, 0, 0],
-      [5, 0, 0, 0, 0]
-    ]
-  },
-  {
-    "Name": "Matematyka",
-    "Attendance": [
-      [40, 0, 0, 0, 0],
-      [12, 0, 0, 1, 0]
-    ]
-  },
-  {
-    "Name": "Wychowanie fizyczne",
-    "Attendance": [
-      [23, 4, 0, 1, 0],
-      [5, 0, 0, 0, 0]
-    ]
-  }
-]
+  "GPA": [3.11, 0]
+}
