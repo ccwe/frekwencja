@@ -1,0 +1,8 @@
+mixin info-tile(title)
+  .rounded-lg.bg-surface-2.m-3.d-flex
+    .m-3.d-flex.flex-column.justify-content-center.align-items-center
+      h5 #{title}
+      hr
+      .mt-1
+        if block
+          block

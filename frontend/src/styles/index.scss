@@ -1,0 +1,320 @@
+@use 'sass:color';
+
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,700';
+
+$red: #ec4141;
+$red-dark: #f29ea0;
+$red-accent: #f55a5b;
+$blue: #00aeff;
+$blue-dark: #82d7ff;
+$blue-accent: #27bbff;
+$background: #121212;
+$surface-1: color.mix($background, white, $weight: 95%);
+$surface-2: color.mix($background, white, $weight: 93%);
+
+%relative {
+  position: relative;
+}
+
+%absolute {
+  position: absolute;
+}
+
+%font-fam {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial,
+    Helvetica, sans-serif;
+}
+
+%font-24 {
+  font-size: 24px;
+}
+
+%transition {
+  transition: 0.2s ease;
+}
+
+%color-primary {
+  color: $red-dark;
+}
+
+%w-100 {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %font-fam;
+  background: $background;
+  color: white;
+  min-height: 100vh;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.input-container {
+  @extend %relative;
+  margin: 0 40px 36px;
+  input {
+    @extend %font-24;
+    @extend %relative;
+    @extend %w-100;
+    outline: 0;
+    background: 0 0;
+    height: 60px;
+    border: 0;
+    font-weight: 400;
+    color: white;
+  }
+  label {
+    @extend %absolute;
+    @extend %font-24;
+    @extend %transition;
+    top: 0;
+    left: 0;
+    color: #757575;
+    font-weight: 300;
+    line-height: 60px;
+  }
+  input:focus + label,
+  input:valid + label {
+    @extend %transition;
+    transform: translateY(-30px);
+    font-size: 1rem;
+  }
+  .input-bar {
+    @extend %absolute;
+    @extend %w-100;
+    left: 0;
+    bottom: 0;
+    background: #757575;
+    height: 1px;
+    &::before {
+      @extend %input-bar-pseudo;
+      left: 50%;
+    }
+    &::after {
+      @extend %input-bar-pseudo;
+      right: 50%;
+    }
+  }
+}
+
+%input-bar-pseudo {
+  @extend %absolute;
+  @extend %transition;
+  content: '';
+  bottom: 0;
+  background: $red-dark;
+  width: 0;
+  height: 2px;
+  input:focus ~ & {
+    @extend %transition;
+    width: 50%;
+  }
+}
+
+.login-title {
+  @extend %relative;
+  @extend %color-primary;
+  margin: 0 0 35px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  border-left: 5px solid $red-dark;
+  padding: 10px 0 10px 30px;
+  &::after {
+    @extend %absolute;
+    content: 'Dane logowania do Synergii';
+    font-size: 0.7rem;
+    bottom: 0;
+    left: 30px;
+  }
+}
+
+form input[type='submit'] {
+  @extend %relative;
+  width: 70%;
+}
+
+#login-form {
+  @extend %relative;
+  &::before {
+    @extend %absolute;
+    content: '\00a9  2020 CCWE';
+    bottom: 5px;
+    color: #757575;
+    font-size: 0.8rem;
+    font-weight: 300;
+    left: 50%;
+    margin-left: -40px;
+  }
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.form-checkbox {
+  margin: 0 40px 20px;
+  width: 70%;
+  display: flex;
+  input {
+    @extend %absolute;
+    left: -999px;
+    opacity: 0;
+    &:checked + label {
+      svg {
+        @extend %transition;
+        fill: $red-accent;
+      }
+    }
+    & + label {
+      @extend %transition;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+  span {
+    @extend %font-fam;
+    font-weight: 300;
+    padding-left: 10px;
+  }
+  svg {
+    @extend %transition;
+    width: 14px;
+    height: 14px;
+    fill: lightgray;
+  }
+}
+
+.social-links {
+  a:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  svg {
+    @extend %transition;
+    fill: #444;
+
+    &:hover {
+      @extend %transition;
+      fill: $red-dark;
+    }
+  }
+}
+
+.table-square-space {
+  width: 65px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+  margin: 0.5rem;
+}
+
+.input-red {
+  @extend %relative;
+  color: $red-dark !important;
+}
+
+.regulamin-link,
+.regulamin-link:hover {
+  @extend %color-primary;
+}
+
+hr {
+  border: 1px solid $red-accent;
+  margin: 0;
+  width: 20px;
+  height: 1px;
+  box-sizing: border-box;
+}
+
+.cookie-info {
+  @extend %w-100;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  background: #212223;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  z-index: 50;
+  text-align: center;
+}
+
+.cookie-close {
+  padding: 0.5rem;
+  cursor: pointer;
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: #ddd;
+  }
+}
+
+.btn-danger {
+  background-color: $red-dark;
+  border-color: $red-dark;
+  color: black;
+  &:hover {
+    background-color: $red-accent;
+    border-color: $red-accent;
+  }
+  &:disabled {
+    background-color: $surface-2;
+    border-color: $surface-2;
+    color: white;
+  }
+}
+
+.adsbygoogle {
+  @extend %w-100;
+  display: block;
+  overflow: hidden;
+}
+
+.evade::after {
+  @extend %font-fam;
+  content: ' firmy Librus';
+}
+
+a {
+  @extend %transition;
+  color: $red-dark;
+  &:hover {
+    @extend %transition;
+    color: $red-accent;
+  }
+}
+
+.bg {
+  &-black {
+    background: $surface-1;
+  }
+  &-surface {
+    &-1 {
+      background: $surface-1;
+    }
+    &-2 {
+      background: $surface-2;
+    }
+  }
+  &-blue {
+    background: $blue-dark;
+    color: black;
+  }
+  &-red {
+    background: $red-dark;
+    color: black;
+  }
+}

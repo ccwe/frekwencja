@@ -1,0 +1,7 @@
+mixin notification(title)
+  .rounded-lg.bg-surface-2.m-3.d-flex
+    .m-3.d-flex.flex-column.justify-content-center
+      h6.font-weight-bold #{title}
+      .mt-1
+        if block
+          block

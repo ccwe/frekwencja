@@ -1,0 +1,29 @@
+- const dot = '&nbsp;&nbsp;•&nbsp;&nbsp;'
+.rounded-lg.bg-surface-2.m-3.d-flex.justify-content-between.align-items-center
+  .m-2 Legenda:
+    br
+    | O – obecności
+    br
+    | U/NU – nieobecności (nie)usprawiedliwione
+    br
+    | * – przedmiot pozalekcyjny
+ins.adsbygoogle(
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-client=id
+  data-ad-slot=slot
+  data-ad-format="fluid"
+)
+each subject in subjects
+  - const { subjectName, attendance, percentage, isBelowHalf } = subject
+  if attendance[semester].reduce((pv, cv) => pv + cv) > 0
+    .rounded-lg.bg-surface-2.m-3.d-flex.justify-content-between.align-items-center
+      .m-2
+        .font-weight-bold(style="letter-spacing: 0.5px")!= subjectName
+        div
+          | O: #{attendance[semester][0]}
+          span(style="color: gray")!= dot
+          | U: #{attendance[semester][1]}
+          span(style="color: gray")!= dot
+          | NU: #{attendance[semester][2]}
+      .rounded-lg.table-square-space(class=isBelowHalf[semester] ? 'bg-danger' : 'bg-blue') #{percentage[semester]}%

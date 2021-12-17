@@ -1,0 +1,146 @@
+html(lang="pl" prefix="og: http://ogp.me/ns#")
+  head
+    include ./templates/meta/head
+  body(style="background: #121212").d-flex.flex-column.justify-content-between
+    .container
+      noscript
+        .mt-4.p-3.rounded-lg.bg-black
+          .p-2.rounded-lg Do poprawnego działania strona wymaga wsparcia dla JavaScript.
+      .mt-4.p-3.rounded-lg.bg-black
+        .p-2.rounded-lg
+          h1.text-center Przerwa administracyjna
+          | Z powodów administracyjnych działanie kalkulatora zostaje tymczasowo zawieszone. Pracujemy nad rozwiązaniem problemu. Jeśli chcesz otrzymać powiadomienie o przywróceniu funkcjonalności, napisz do nas maila na adres
+          a(href='mailto:frekwencja@ccwe.pl') &nbsp;frekwencja@ccwe.pl&nbsp;
+          p.my-2 W temacie wiadomości napisz&nbsp;
+            code Update request
+            | , a w treści&nbsp;
+            code Proszę o powiadomienie mnie poprzez wiadomość email o przywróceniu funkcjonalności kalkulatora.
+            | . Otrzymasz od nas informację, gdy problem zostanie rozwązany.
+      .row.no-gutters.justify-content-sm-around.mt-2.mt-lg-5.align-items-start
+        #login-form.col-12.col-sm-8.col-md-6.col-lg-4.pb-4.bg-black.rounded-lg
+          .d-flex.justify-content-center.m-3
+            ins.adsbygoogle(
+              data-ad-client=adsenseId
+              data-ad-slot=adsenseBanners[0]
+              data-ad-format="fluid"
+              data-ad-layout-key="-gq+21+69-4p-50"
+              data-full-width-responsive="false"
+            )
+            script (adsbygoogle = window.adsbygoogle || []).push({});
+          h4.login-title Logowanie
+          .d-flex.flex-column.align-items-center
+            form.d-flex.flex-column.align-items-center.w-100(onsubmit='return void')
+              include ./templates/form/input
+              include ./templates/form/checkbox
+              +input-field('username', 'text')
+                | Login (nie e-mail)
+              +input-field('password', 'password')
+                | Hasło
+              +checkbox('extracurricular', false)
+                span Pokaż zajęcia dodatkowe
+              +checkbox('reg', true)
+                span Akceptuję&nbsp;
+                a(
+                  href="https://cdn.ccwe.pl/frekwencja/Regulamin-swiadczenia-droga-elektroniczna-Uslugi-Kalkulator-frekwencji-CCWE-01.10.2019.pdf"
+                  target="_blank"
+                  onclick="ga('send', 'event', 'MISC', 'REG', 'Regulamin Read');"
+                  rel="nofollow"
+                ) regulamin
+              #errors.pb-2.mx-4.text-center(style="font-size: 12px")
+              input.btn.btn-lg.btn-danger.rounded-0.py-2.mb-3(
+                name="submit"
+                type="submit"
+                value="Oblicz frekwencję"
+              )
+            a.m-2(
+              id="demo"
+              href=""
+            ) Pokaż demo
+            .pb-2.social-links
+              a(
+                href="https://facebook.com/ccwepl"
+                target="_blank"
+                onclick="ga('send', 'event', 'SOC', 'FB', 'Facebook View');"
+              )
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              a(
+                href="https://github.com/ccwe"
+                target="_blank"
+                onclick="ga('send', 'event', 'SOC', 'GitHub', 'Github View');"
+              )
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        .col-12.col-md-10.col-lg-7.rounded-lg.bg-black.mt-4.mt-lg-0
+          include ./templates/general/info-tile
+          include ./templates/general/notification
+          +notification('Update 1.5.0 (przejściowy):')
+            | – dark mode
+            br
+            | – poprawa szybkości działania
+            br
+            | – zmniejszenie zużycia danych
+          .d-flex.justify-content-center.m-3
+            ins.adsbygoogle(
+              style="display:block; text-align:center;"
+              data-ad-layout="in-article"
+              data-ad-client=adsenseId
+              data-ad-format="fluid"
+              data-ad-slot=adsenseBanners[1]
+              data-full-width-responsive="false"
+            )
+            script (adsbygoogle = window.adsbygoogle || []).push({});
+          +info-tile('Co to jest?')
+            span.evade Kalkulator frekwencji to aplikacja pozwalająca użytkownikom dziennika elektronicznego
+            .
+              &nbsp;na szybkie i proste sprawdzenie procentowej frekwencji, a
+              także dokładnej liczby obecności i nieobecności, z podziałem na
+              usprawiedliwione i nieusprawiedliwione, na poszczególnych
+              zajęciach lekcyjnych i dodatkowych.
+          +info-tile('Przetwarzanie danych').
+            Dane logowania oraz dane pozyskane z dziennika są wykorzystywane
+            tylko i wyłącznie w celu obliczenia informacji o frekwencji. Po
+            zakończeniu procedury wszystkie dane są niezwłocznie usuwane z
+            pamięci operacyjnej naszych serwerów. Akceptując regulamin
+            wyrażasz zgodę na przetwarzanie Twoich danych.
+          +info-tile('Od autorów').
+            Dziękujemy za skorzystanie z naszej aplikacji! Jest ona
+            rozwijana przez stowarzyszenie działające pod nazwą Centrum
+            Cyfrowego Wsparcia Edukacji, które finansuje swoją działalność
+            głównie z darowizn. Będziemy wdzięczni, jeżeli rozważysz
+            wsparcie tego i innych projektów lub poinformujesz o nich swoich
+            znajomych.
+        .row.no-gutters.justify-content-center.mt-4.mb-3.w-100
+          .col-12.col-sm-11
+            .w-100.bg-black.rounded-lg.d-flex.mb-3
+              select.mx-auto.my-2#semester(style="display:none")
+                option(value="0") Semestr 1
+                option(value="1") Semestr 2
+                option(value="2") Oba
+            .row.no-gutters.justify-content-sm-center.mx-n1.mx-md-n2.mx-lg-n3
+              #renderContext.col-12.col-sm-10.col-md-8.col-lg-6.bg-black.rounded-lg
+    .cookie-info
+      .p-3 Aby zapewnić najlepszą jakość usług, nasza strona wykorzystuje pliki cookies na zasadach określonych w&nbsp;
+        a(
+          href="https://cdn.ccwe.pl/frekwencja/Regulamin-swiadczenia-droga-elektroniczna-Uslugi-Kalkulator-frekwencji-CCWE-01.10.2019.pdf"
+          target="_blank"
+          onclick="ga('send', 'event', 'REG', 'PDF', 'Regulamin');"
+          rel="nofollow"
+        ) Regulaminie
+        | . Pliki cookies możesz wyłączyć w ustawieniach przeglądarki.
+      .cookie-close.p-3
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+    footer.bg-surface-1.text-center.p-3(style="font-size: 9px; ").
+      Centrum Cyfrowego Wsparcia Edukacji, ul. Leśna 21A/1, 05-110
+      Jabłonna to stowarzyszenie wpisane do rejestru stowarzyszeń, innych
+      organizacji społecznych i zawodowych, fundacji oraz publicznych
+      zakładów opieki zdrowotnej w Krajowym Rejestrze Sądowym pod numerem
+      780534, posługujące się NIP: 5213862679, kontakt e-mail:
+      biuro@ccwe.pl
+    script.
+      if (!document.cookie.match('zgoda=1')) {
+        document.querySelector('.cookie-info').style.display = 'flex';
+        document.querySelector('.cookie-close').onclick = function () {
+          document.cookie =
+            'zgoda=1; max-age=2629743; domain=frekwencja.ccwe.pl; path=/; secure';
+          document.querySelector('.cookie-info').style.display = 'none';
+        };
+      }

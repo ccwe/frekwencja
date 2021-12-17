@@ -1,0 +1,100 @@
+[
+  {
+    "Name": "Fizyka",
+    "Attendance": [
+      [25, 3, 0, 2, 0],
+      [3, 0, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Podstawy przedsiębiorczości",
+    "Attendance": [
+      [2, 3, 0, 4, 0],
+      [0, 0, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Chemia",
+    "Attendance": [
+      [11, 0, 0, 0, 0],
+      [3, 1, 0, 1, 0]
+    ]
+  },
+  {
+    "Name": "Język niemiecki",
+    "Attendance": [
+      [0, 13, 0, 6, 0],
+      [15, 2, 0, 3, 0]
+    ]
+  },
+  {
+    "Name": "Godzina wychowawcza",
+    "Attendance": [
+      [4, 0, 0, 4, 0],
+      [1, 1, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Geografia",
+    "Attendance": [
+      [5, 0, 0, 3, 0],
+      [2, 1, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Język hiszpański",
+    "Attendance": [
+      [1, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Język polski",
+    "Attendance": [
+      [20, 8, 0, 0, 0],
+      [10, 1, 0, 2, 0]
+    ]
+  },
+  {
+    "Name": "Historia",
+    "Attendance": [
+      [7, 7, 0, 4, 0],
+      [2, 0, 0, 1, 0]
+    ]
+  },
+  {
+    "Name": "Biologia",
+    "Attendance": [
+      [9, 0, 0, 0, 0],
+      [5, 0, 0, 1, 0]
+    ]
+  },
+  {
+    "Name": "Język angielski",
+    "Attendance": [
+      [15, 2, 0, 3, 0],
+      [4, 1, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Informatyka",
+    "Attendance": [
+      [10, 0, 0, 0, 0],
+      [5, 0, 0, 0, 0]
+    ]
+  },
+  {
+    "Name": "Matematyka",
+    "Attendance": [
+      [40, 0, 0, 0, 0],
+      [12, 0, 0, 1, 0]
+    ]
+  },
+  {
+    "Name": "Wychowanie fizyczne",
+    "Attendance": [
+      [23, 4, 0, 1, 0],
+      [5, 0, 0, 0, 0]
+    ]
+  }
+]
