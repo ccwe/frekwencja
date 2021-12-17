@@ -57,142 +57,8 @@ input:focus {
   outline: 0;
 }
 
-.input-container {
-  @extend %relative;
-  margin: 0 40px 36px;
-  input {
-    @extend %font-24;
-    @extend %relative;
-    @extend %w-100;
-    outline: 0;
-    background: 0 0;
-    height: 60px;
-    border: 0;
-    font-weight: 400;
-    color: white;
-  }
-  label {
-    @extend %absolute;
-    @extend %font-24;
-    @extend %transition;
-    top: 0;
-    left: 0;
-    color: #757575;
-    font-weight: 300;
-    line-height: 60px;
-  }
-  input:focus + label,
-  input:valid + label {
-    @extend %transition;
-    transform: translateY(-30px);
-    font-size: 1rem;
-  }
-  .input-bar {
-    @extend %absolute;
-    @extend %w-100;
-    left: 0;
-    bottom: 0;
-    background: #757575;
-    height: 1px;
-    &::before {
-      @extend %input-bar-pseudo;
-      left: 50%;
-    }
-    &::after {
-      @extend %input-bar-pseudo;
-      right: 50%;
-    }
-  }
-}
-
-%input-bar-pseudo {
-  @extend %absolute;
-  @extend %transition;
-  content: '';
-  bottom: 0;
-  background: $red-dark;
-  width: 0;
-  height: 2px;
-  input:focus ~ & {
-    @extend %transition;
-    width: 50%;
-  }
-}
-
-.login-title {
-  @extend %relative;
-  @extend %color-primary;
-  margin: 0 0 35px;
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: left;
-  border-left: 5px solid $red-dark;
-  padding: 10px 0 10px 30px;
-  &::after {
-    @extend %absolute;
-    content: 'Dane logowania do Synergii';
-    font-size: 0.7rem;
-    bottom: 0;
-    left: 30px;
-  }
-}
-
-form input[type='submit'] {
-  @extend %relative;
-  width: 70%;
-}
-
-#login-form {
-  @extend %relative;
-  &::before {
-    @extend %absolute;
-    content: '\00a9  2020 CCWE';
-    bottom: 5px;
-    color: #757575;
-    font-size: 0.8rem;
-    font-weight: 300;
-    left: 50%;
-    margin-left: -40px;
-  }
-}
-
 .btn:focus {
   box-shadow: none !important;
-}
-
-.form-checkbox {
-  margin: 0 40px 20px;
-  width: 70%;
-  display: flex;
-  input {
-    @extend %absolute;
-    left: -999px;
-    opacity: 0;
-    &:checked + label {
-      svg {
-        @extend %transition;
-        fill: $red-accent;
-      }
-    }
-    & + label {
-      @extend %transition;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-  }
-  span {
-    @extend %font-fam;
-    font-weight: 300;
-    padding-left: 10px;
-  }
-  svg {
-    @extend %transition;
-    width: 14px;
-    height: 14px;
-    fill: lightgray;
-  }
 }
 
 .social-links {
@@ -218,16 +84,6 @@ form input[type='submit'] {
   text-align: center;
   padding: 0.5rem 0;
   margin: 0.5rem;
-}
-
-.input-red {
-  @extend %relative;
-  color: $red-dark !important;
-}
-
-.regulamin-link,
-.regulamin-link:hover {
-  @extend %color-primary;
 }
 
 hr {
