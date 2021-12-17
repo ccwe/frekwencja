@@ -83,7 +83,6 @@ input:focus {
   color: #fff;
   text-align: center;
   padding: 0.5rem 0;
-  margin: 0.5rem;
 }
 
 hr {
@@ -137,6 +136,7 @@ hr {
   @extend %w-100;
   display: block;
   overflow: hidden;
+  min-width: 250px;
 }
 
 .evade::after {
