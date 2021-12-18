@@ -15,6 +15,7 @@ bin/
 src/assets/
 .DS_Store
 *.env.yaml
+*.ignore.*
 .env.local
 .env.development.local
 .env.test.local

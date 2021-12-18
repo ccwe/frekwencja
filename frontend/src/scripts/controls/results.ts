@@ -78,6 +78,8 @@ function displayTiles(data: Results) {
   });
 
   ctx.scrollIntoView({ behavior: 'smooth' });
+
+  (adsbygoogle = (window as any).adsbygoogle || []).push({});
 }
 
 export function showResults(data: Results) {
@@ -87,6 +89,4 @@ export function showResults(data: Results) {
   semester.style.display = 'flex';
 
   displayTiles(data);
-
-  (adsbygoogle = (window as any).adsbygoogle || []).push({});
 }
