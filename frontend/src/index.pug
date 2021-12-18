@@ -1,7 +1,7 @@
-html(lang="pl" prefix="og: http://ogp.me/ns#")
+html(lang="pl", prefix="og: http://ogp.me/ns#")
   head
     include ./templates/meta/head
-  body(style="background: #121212").d-flex.flex-column.justify-content-between
+  body.d-flex.flex-column.justify-content-between(style="background: #121212")
     .container
       h1.text-center.m-4 Kalkulator frekwencji
       noscript
@@ -11,77 +11,70 @@ html(lang="pl" prefix="og: http://ogp.me/ns#")
         .col-12.col-md-10.col-lg-7.rounded-lg.bg-black.mt-4.mt-lg-0.d-flex.flex-column.align-items-center
           include ./templates/general/info-tile
           include ./templates/general/notification
-          - const appUrl = "https://github.com/ccwe/frekwencja/releases"
+          - const appUrl = "https://github.com/ccwe/frekwencja/releases";
           +notification('Update 1.6.0 (przejściowy):')
             ul
               li dodano średnie ważone dla poszczególnych przedmiotów
               li dodano wyświetlanie ogólnej frekwencji i przewidywanej średniej semestralnej
               li przeniesiono integrację z Synergią do zewnętrznej aplikacji. Serwery CCWE nie kontaktują się już w żaden sposób z dziennikiem, ani nie przetwarzają danych z niego pozyskanych. Takie rozwiązanie jest konieczne ze względu na żądanie usunięcia integracji przez spółkę Librus. Kliknij w przycisk poniżej, by pobrać aplikację w wersji odpowiedniej dla swojego systemu operacyjnego
           a.btn.btn-danger.btn-block.m-3.w-75.mx-auto(
-            href=appUrl
-            target="_blank"
+            href=appUrl,
+            target="_blank",
             onclick="ga('send', 'event', 'APP', 'Link', 'View');"
           ) Pobierz aplikację
           +info-tile('Co to jest?')
             span.evade Kalkulator frekwencji to aplikacja pozwalająca użytkownikom dziennika elektronicznego
-            .
-              &nbsp;na szybkie i proste sprawdzenie średnich ważonych oraz procentowej frekwencji, a
-              także dokładnej liczby obecności i nieobecności, z podziałem na
-              usprawiedliwione i nieusprawiedliwione, na poszczególnych
-              zajęciach lekcyjnych i dodatkowych.
+            | &nbsp;na szybkie i proste sprawdzenie średnich ważonych oraz procentowej frekwencji, a także dokładnej liczby obecności i nieobecności, z podziałem na usprawiedliwione i nieusprawiedliwione, na poszczególnych zajęciach lekcyjnych i dodatkowych.
+            br
+            br
+            | Po sukcesywnym skorzystaniu z aplikacji możesz zachować adres URL, by w dowolnym momencie odtworzyć swoje wyniki. Taki sam efekt uzyskasz używając historii przeglądania na swoim urządzeniu lub dodając stronę do zakładek po użyciu. Jeśli chcesz podzielić się z kimś swoimi wynikami – zwyczajnie udostępnij im link!
           .d-flex.justify-content-center.m-3
             ins.adsbygoogle(
-              style="display:block; text-align:center;"
-              data-ad-layout="in-article"
-              data-ad-client=adId
-              data-ad-format="fluid"
-              data-ad-slot=adSlot
+              style="display: block; text-align: center",
+              data-ad-layout="in-article",
+              data-ad-client=adId,
+              data-ad-format="fluid",
+              data-ad-slot=adSlot,
               data-full-width-responsive="true"
             )
             script (adsbygoogle = window.adsbygoogle || []).push({});
-          +info-tile('Twoje dane').
-            CCWE nie przetwarza żadnych danych. Strona działa całkowicie offline, a aplikacja operuje wyłącznie na urządzeniu użytkownika.
+          +info-tile('Twoje dane')
+            | CCWE nie przetwarza żadnych danych. Strona działa całkowicie offline, a aplikacja operuje wyłącznie na urządzeniu użytkownika.
           +info-tile('Aplikacja')
-            .
-              Do poprawnego działania strona wymaga dodatkowej aplikacji dostarczanej przez CCWE. Po pobraniu aplikacji uruchom ją podwójnym kliknięciem i postępuj zgodnie z instrukcjami. Aplikację możesz również skompilować samodzielnie z kodu źródłowego.
+            | Do poprawnego działania strona wymaga dodatkowej aplikacji dostarczanej przez CCWE. Po pobraniu aplikacji uruchom ją podwójnym kliknięciem i postępuj zgodnie z instrukcjami. Aplikację możesz również skompilować samodzielnie z kodu źródłowego. Strona wymaga aplikacji do działania, lecz aplikacja nie wymaga strony i może działać samodzielnie.
+            //- br
+            //- br
+            //- | <strong>Uwaga! </strong>Wersje na androida i ios nie mają nic wspólnego z typowymi aplikacjami – są to jwdynie pliki wykonywalne skompilowane pod architekturę tych systemów. By móc ich używać, będziesz potrzebować emulatora terminala zainsatlowanego na swoim urządzeniu (np. <a href="https://termux.com/" target="_blank">Termux</a>).
             br
             br
-            <strong>Uwaga! </strong>Wersje na androida i ios nie mają nic wspólnego z typowymi aplikacjami – są to jwdynie pliki wykonywalne skompilowane pod architekturę tych systemów. By móc ich używać, będziesz potrzebować emulatora terminala zainsatlowanego na swoim urządzeniu (np. <a href="https://termux.com/" target="_blank">Termux</a>).
-          +info-tile('Legal').
-            CCWE nie ponosi odpowiedzialności za poprawność wyświetlonych danych, za sposób, w jaki użytkownik wykorzystuje projekt lub jego elementy, ani za ich modyfikowanie, czy redystrybucję. Niniejszy projekt jest darmowym oprogramowaniem z otwartym źródłem, który powstał w nadzei, że się komuś przyda. Projekt i jego pojedyńcze elementy nie są objęte żadną gwarancją. CCWE nie jest powiązane ze spółką Librus. Znaki towarowe zamieszczone w projekcie należą do ich prawowitych właścicieli i są używane wyłącznie w celach informacyjnych.
+            | Jeśli potrzebujesz swoich wyników, gdy nie masz możliwości użycia aplikacji, skorzystaj ze sposobu opisanego w sekcji "Co to jest?".
+          +info-tile('Legal')
+            | CCWE nie ponosi odpowiedzialności za poprawność wyświetlonych danych, za sposób, w jaki użytkownik wykorzystuje projekt lub jego elementy, ani za ich modyfikowanie, czy redystrybucję. Niniejszy projekt jest darmowym oprogramowaniem z otwartym źródłem, który powstał w nadzei, że się komuś przyda. Projekt i jego pojedyńcze elementy nie są objęte żadną gwarancją. CCWE nie jest powiązane ze spółką Librus. Znaki towarowe zamieszczone w projekcie należą do ich prawowitych właścicieli i są używane wyłącznie w celach informacyjnych.
           +info-tile('Od autorów')
-            .
-              Dziękujemy za skorzystanie z naszej aplikacji! Jest ona
-              rozwijana przez stowarzyszenie działające pod nazwą Centrum
-              Cyfrowego Wsparcia Edukacji, które finansuje swoją działalność
-              głównie z darowizn. Będziemy wdzięczni, jeżeli rozważysz
-              wsparcie tego i innych projektów lub poinformujesz o nich swoich
-              znajomych.
+            | Dziękujemy za skorzystanie z naszej aplikacji! Jest ona rozwijana przez stowarzyszenie działające pod nazwą Centrum Cyfrowego Wsparcia Edukacji, które finansuje swoją działalność głównie z darowizn. Będziemy wdzięczni, jeżeli rozważysz wsparcie tego i innych projektów lub poinformujesz o nich swoich znajomych.
             br
             br
-            .
-              Kod źródłowy strony, aplikacji, jak i poprzedniej wersji serwisu (v1.5.0 i starsza) jest publicznie dostępny na naszym Githubie, na licencji GPL v3. W razie występienia błędów w działaniu, możesz je zgłosić za pomocą Github Issues lub wysyłając maila na adres <a href="mailto:frekwencja@ccwe.pl" target="_blank">frekwencja@ccwe.pl</a>
-          a.m-2(
-            id="demo"
-            href=""
-          ) Pokaż demo
+            | Kod źródłowy strony, aplikacji, jak i poprzedniej wersji serwisu (v1.5.0 i starsza) jest publicznie dostępny na naszym <a href="https://github.com/ccwe" target="_blank">Githubie</a>, na licencji GPL-3.0. W razie występienia błędów w działaniu, możesz je zgłosić za pomocą Github Issues lub wysyłając maila na adres <a href="mailto:frekwencja@ccwe.pl" target="_blank">frekwencja@ccwe.pl</a>
+          a#demo.m-2(href="") Pokaż demo
           .py-3.social-links
             a(
-              href="https://facebook.com/ccwepl"
-              target="_blank"
+              href="https://facebook.com/ccwepl",
+              target="_blank",
               onclick="ga('send', 'event', 'SOC', 'FB', 'View');"
             )
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
+                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
             a(
-              href="https://github.com/ccwe"
-              target="_blank"
+              href="https://github.com/ccwe",
+              target="_blank",
               onclick="ga('send', 'event', 'SOC', 'GitHub', 'View');"
             )
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16")
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
         .row.no-gutters.justify-content-center.mt-4.mb-3.w-100
           .col-12.col-sm-11
             .w-100.bg-black.rounded-lg.d-flex.mb-3
-              select.mx-auto.my-2#semester(style="display:none")
+              select#semester.mx-auto.my-2(style="display: none")
                 option(value="0") Semestr 1
                 option(value="1") Semestr 2
                 option(value="2") Oba
@@ -90,13 +83,12 @@ html(lang="pl" prefix="og: http://ogp.me/ns#")
     .cookie-info
       .p-3 Aby zapewnić najlepszą jakość usług, nasza strona wykorzystuje pliki cookies Google Analytics oraz AdSense. Pliki cookies możesz wyłączyć w ustawieniach przeglądarki.
       .cookie-close.p-3
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/>
     script.
-      if (!document.cookie.match('zgoda=1')) {
-        document.querySelector('.cookie-info').style.display = 'flex';
-        document.querySelector('.cookie-close').onclick = function () {
-          document.cookie =
-            'zgoda=1; max-age=2629743; domain=frekwencja.ccwe.pl; path=/; secure';
-          document.querySelector('.cookie-info').style.display = 'none';
+      if (!document.cookie.match("zgoda=1")) {
+        document.querySelector(".cookie-info").style.display = "flex";
+        document.querySelector(".cookie-close").onclick = function () {
+          document.cookie = "zgoda=1; max-age=2629743; domain=frekwencja.ccwe.pl; path=/; secure";
+          document.querySelector(".cookie-info").style.display = "none";
         };
       }
